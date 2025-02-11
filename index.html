@@ -88,16 +88,14 @@
             <p>The <code>data-parallaxus-transform</code> attribute allows you to apply CSS transformations based on the position of an element in the browser window.</p>
 
             <h4>Example:</h4>
-            <pre>
-        <code>&lt;div data-parallaxus-transform='{"from": {"translateY": "0%"}, "to": {"translateY": "20%"}}'&gt;
+            <pre><code>&lt;div data-parallaxus-transform='{"from": {"translateY": "0%"}, "to": {"translateY": "20%"}}'&gt;
   &lt;!-- Content here --&gt;
 &lt;/div&gt;</code>
     </pre>
             <p>In this example, the element will start with a translateY of 0% and scale 1, and as it moves through the viewport, it will move 20% down.</p>
 
             <h4>Additional Examples:</h4>
-            <pre>
-        <code>&lt;!-- Multiple steps with translation and scaling --&gt;
+            <pre><code>&lt;!-- Multiple steps with translation and scaling --&gt;
 &lt;div data-parallaxus-transform='{"0": {"translateY": "0%", "scale": 1}, "50": {"translateY": "30%", "scale": 1.8}, "100": {"translateY": "50%", "scale": 1.5}}'&gt;&lt;/div&gt;
 
 &lt;!-- Fade in and back out --&gt;
@@ -123,24 +121,22 @@ function triggerOnLeave(delta){
 
         <section data-parallaxus-transform='{"0": {"translateY": "3rem", "scale": 0.8, "opacity": 0, "boxShadow": ".5em 1.5em #872c1e, .75em .75em #1a1c22, 0em 0em 1em -.5em #1a1c22"}, "20": {"translateY": "0rem", "scale": 1, "opacity": 1}, "70": {"translateY": "0rem", "scale": 1, "opacity": 1, "boxShadow": ".5em 0em #872c1e, .75em .75em #1a1c22, 0em 0em 1em -.5em #1a1c22"}, "100": {"translateY": "3rem", "scale": 0.8, "opacity": 0, "boxShadow": ".5em -1em #872c1e, .75em .75em #1a1c22, 0em 0em 1em -.5em #1a1c22"}}'>
             <h2>Example HTML Structure</h2>
-            <pre>
-                <code>&lt;div data-parallaxus-easing&gt;
-          &lt;div id="testHero"&gt;
-            &lt;div id="test1" data-parallaxus-transform='{"from": {"height": "10vw"}, "to": {"height": "50vw"}}'&gt;
-              &lt;!-- Content here --&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        
-          &lt;div id="test2" data-parallaxus-transform='{
-            "0": {"translateY": "0%", "scale": 1, "rotate": "-30deg"},
-            "25": {"translateY": "25%", "scale": 1.2},
-            "75": {"translateY": "20%", "scale": 1.2},
-            "100": {"translateY": "0%", "scale": 1, "rotate": "30deg"}
-          }'&gt;
+            <pre><code>&lt;div data-parallaxus-easing&gt;
+    &lt;div id="testHero"&gt;
+        &lt;div id="test1" data-parallaxus-transform='{"from": {"height": "10vw"}, "to": {"height": "50vw"}}'&gt;
             &lt;!-- Content here --&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;</code>
-            </pre>
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id="test2" data-parallaxus-transform='{
+    "0": {"translateY": "0%", "scale": 1, "rotate": "-30deg"},
+    "25": {"translateY": "25%", "scale": 1.2},
+    "75": {"translateY": "20%", "scale": 1.2},
+    "100": {"translateY": "0%", "scale": 1, "rotate": "30deg"}
+    }'&gt;
+        &lt;!-- Content here --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
         </section>
 
         <section data-parallaxus-transform='{"0": {"translateY": "3rem", "scale": 0.8, "opacity": 0, "boxShadow": ".5em 1.5em #872c1e, .75em .75em #1a1c22, 0em 0em 1em -.5em #1a1c22"}, "20": {"translateY": "0rem", "scale": 1, "opacity": 1}, "70": {"translateY": "0rem", "scale": 1, "opacity": 1, "boxShadow": ".5em 0em #872c1e, .75em .75em #1a1c22, 0em 0em 1em -.5em #1a1c22"}, "100": {"translateY": "3rem", "scale": 0.8, "opacity": 0, "boxShadow": ".5em -1em #872c1e, .75em .75em #1a1c22, 0em 0em 1em -.5em #1a1c22"}}'>
