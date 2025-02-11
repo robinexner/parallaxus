@@ -1,0 +1,524 @@
+/*
+ * This file is part of the fundo_ project.
+ * Copyright (c) 2025 Robin Exner (https://robinexner.de)
+ * GitHub: https://github.com/robinexner/fundo_
+ * This software is licensed under the MIT License.
+ * See the LICENSE file for more information.
+ */
+
+:root {
+    /* 
+    * Grayscale
+    */
+    --lighterWhite: #fffffe;
+    --lightWhite: #fefdf8;
+    --white: #fbf9f0;
+    --darkWhite: #e9e7df;
+    --darkerWhite: #dad9d1;
+    --lighterGray: #d6d5ce;
+    --lightGray: #c3c3bd;
+    --gray: #b0b0ab;
+    --darkGray: #9e9e9a;
+    --darkerGray: #8b8b89;
+    --lighterBlack: #656666;
+    --lightBlack: #3f4144;
+    --black: #1a1c22;
+    --darkBlack: #131418;
+    --darkerBlack: #0c0c0e;
+    /* 
+    * Red
+    */
+    --red000: #140401;
+    --red100: #2d0802;
+    --red200: #450c03;
+    --red300: #5b170c;
+    --red400: #712215;
+    --red500: #872c1e;
+    --red600: #ab4533;
+    --red700: #cf5e49;
+    --red800: #f2765e;
+    --red900: #ffa18f;
+    --red1000: #f9bdb1;
+    /* 
+    * Orange
+    */
+    --orange000: #0d0703;
+    --orange100: #1a0f08;
+    --orange200: #25160e;
+    --orange300: #592e18;
+    --orange400: #8e4623;
+    --orange500: #c25d2d;
+    --orange600: #d0825b;
+    --orange700: #e0a88b;
+    --orange800: #f0cdba;
+    --orange900: #f6dccd;
+    --orange1000: #fce9df;
+    /* 
+    * Yellow
+    */
+    --yellow000: #171503;
+    --yellow100: #3f3b13;
+    --yellow200: #686122;
+    --yellow300: #908731;
+    --yellow400: #b9ae41;
+    --yellow500: #e1d44f;
+    --yellow600: #e6da5c;
+    --yellow700: #ece169;
+    --yellow800: #f2e777;
+    --yellow900: #fdf493;
+    --yellow1000: #fefbdc;
+    /* 
+    * Green
+    */
+    --green000: #06140a;
+    --green100: #0a1e0f;
+    --green200: #123017;
+    --green300: #224429;
+    --green400: #33583b;
+    --green500: #436c4c;
+    --green600: #5e854b;
+    --green700: #789e4b;
+    --green800: #93b64b;
+    --green900: #aed165;
+    --green1000: #d2ed98;
+    /* 
+    * Blue
+    */
+    --blue000: #000e16;
+    --blue100: #011b2b;
+    --blue200: #02283f;
+    --blue300: #073a58;
+    --blue400: #0d4c71;
+    --blue500: #125e8a;
+    --blue600: #2e7ea9;
+    --blue700: #4a9fc8;
+    --blue800: #66bfe7;
+    --blue900: #83d0f3;
+    --blue1000: #a0e1ff;
+    /* 
+    * Purple
+    */
+    --purple000: #0b0112;
+    --purple100: #1a052d;
+    --purple200: #290947;
+    --purple300: #431858;
+    --purple400: #5d266a;
+    --purple500: #77347b;
+    --purple600: #9457a1;
+    --purple700: #b37bc7;
+    --purple800: #d19feb;
+    --purple900: #e0bdf2;
+    --purple1000: #eedcf9;
+}
+
+html {
+    /*font-size: 12pt;*/
+    /*font-size: lamp(1rem, 2vw, 3rem);
+    font-size: clamp(11pt, 1vh, 16pt);
+    font-size: clamp(11pt, 1.3vh, 16pt);
+    */
+    font-size: clamp(11pt, .9vw, 13pt);
+}
+
+body {
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--black);
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header,
+section,
+footer {
+    padding: 2rem;
+}
+
+hr {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-width: 0;
+    border-top: 1px solid var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0em;
+    margin-top: .5em;
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child),
+h5:not(:first-child),
+h6:not(:first-child) {
+    margin-top: .5em;
+}
+
+p {
+    margin-top: 0;
+}
+
+.link,
+a {
+    color: var(--blue300);
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link:hover,
+a:hover {
+    color: var(--blue200);
+}
+
+.link:active,
+a:active {
+    color: var(--blue100);
+    transform: translateY(.05em);
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    font-size: 1em;
+    display: inline-block;
+    padding: .5em;
+    color: var(--black);
+    background-color: var(--white);
+    text-align: center;
+    font-weight: 600;
+    border-radius: .3em;
+    border: .13em solid var(--black);
+    outline: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin: .4em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    color: var(--darkBlack);
+    border-color: var(--darkBlack);
+    background-color: var(--darkWhite);
+}
+
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+    outline: .3em solid var(--darkerWhite);
+}
+
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    transform: translateY(.1em);
+    color: var(--darkerBlack);
+    border-color: var(--darkerBlack);
+    background-color: var(--darkerWhite);
+}
+
+.button:disabled,
+button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="button"]:disabled {
+    color: var(--lighterGray);
+    border-color: var(--lighterGray);
+    background-color: var(--white);
+}
+
+.button:disabled:active,
+button:disabled:active,
+input[type="submit"]:disabled:active,
+input[type="reset"]:disabled:active,
+input[type="button"]:disabled:active {
+    animation: tilt-shake 0.25s linear infinite;
+}
+
+.button--highlighted,
+input[type="submit"].button--highlighted {
+    color: var(--white);
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+.button--highlighted:hover,
+input[type="submit"].button--highlighted:hover {
+    color: var(--darkWhite);
+    background-color: var(--darkerBlack);
+    border-color: var(--darkBlack);
+    outline: 0;
+}
+
+.button--highlighted:focus,
+input[type="submit"].button--highlighted:focus {
+    outline: .3em solid var(--darkerWhite);
+}
+
+.button--highlighted:active,
+input[type="submit"].button--highlighted:active {
+    color: var(--darkerWhite);
+    border-color: var(--darkerBlack);
+    background-color: var(--darkerBlack);
+}
+
+.button--highlighted:disabled,
+input[type="submit"].button--highlighted:disabled {
+    /*
+    color: var(--white);
+    border-color: var(--darkerWhite);
+    background-color: var(--darkerWhite);
+    */
+    color: var(--white);
+    border-color: var(--white);
+    background-color: var(--lighterGray);
+}
+
+a.button {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Util */
+
+.darkmode {
+    --lighterGray: #d6d5ce;
+    --lightGray: #c3c3bd;
+    --gray: #b0b0ab;
+    --darkGray: #9e9e9a;
+    --darkerGray: #8b8b89;
+    --lighterBlack: #fffffe;
+    --lightBlack: #fefdf8;
+    --black: #fbf9f0;
+    --darkBlack: #e9e7df;
+    --darkerBlack: #dad9d1;
+    --lighterWhite: #656666;
+    --lightWhite: #3f4144;
+    --white: #1a1c22;
+    --darkWhite: #131418;
+    --darkerWhite: #111216;
+}
+
+.darkmode .link,
+.darkmode a {
+    color: var(--blue700);
+}
+
+.darkmode .link:hover,
+.darkmode a:hover {
+    color: var(--blue600);
+}
+
+.darkmode .link:active,
+.darkmode a:active {
+    color: var(--blue500);
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Forms
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+label {
+    display: inline-block;
+}
+
+input {
+    display: block;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: .7em .5em;
+    font-size: 1em;
+    border: 0;
+    border-radius: .3em;
+    box-shadow: none;
+    color: var(--black);
+    border: 1px solid transparent;
+    background-color: var(--darkWhite);
+    outline: .3em solid transparent;
+}
+
+
+/* Removes awkward default styles on some inputs for iOS */
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="search"]:hover,
+input[type="text"]:hover,
+input[type="tel"]:hover,
+input[type="url"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
+    background-color: var(--darkerWhite);
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: .3em solid var(--darkerWhite);
+    background-color: var(--darkWhite);
+}
+
+legend {
+    font-weight: 600;
+}
+
+fieldset {}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline;
+}
+
+textarea {
+    min-width: 5em;
+    min-height: 5em;
+    padding: .5em;
+}
+
+form input[type="email"],
+form input[type="number"],
+form input[type="search"],
+form input[type="text"],
+form input[type="tel"],
+form input[type="url"],
+form input[type="password"],
+form textarea,
+form select,
+form label {
+    display: block;
+    width: 35em;
+    max-width: 100%;
+}
+
+form input[type="email"],
+form input[type="number"],
+form input[type="search"],
+form input[type="text"],
+form input[type="tel"],
+form input[type="url"],
+form input[type="password"],
+form textarea,
+form select {
+    margin-top: .2em;
+}
+
+form textarea {
+    height: 13em;
+}
+
+form label {
+    margin-bottom: 1em;
+}
+
+
+/* Tables
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+table {
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: .5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray);
+}
+
+th {
+    background-color: var(--darkWhite);
+}
+
+th:first-child,
+td:first-child {}
+
+th:last-child,
+td:last-child {}
+
+
+/* ------------------------------------ */
+
+@keyframes tilt-shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0eg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

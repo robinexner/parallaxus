@@ -1,0 +1,54 @@
+/*
+ * This file is part of the fundo_ project.
+ * Copyright (c) 2025 Robin Exner (https://robinexner.de)
+ * GitHub: https://github.com/robinexner/fundo_
+ * This software is licensed under the MIT License.
+ * See the LICENSE file for more information.
+ */
+
+.notification {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 70rem;
+    padding: 2rem;
+    background-color: var(--white);
+    z-index: 600;
+    margin: 2rem;
+    box-shadow: 0 0 2em -1em var(--darkerBlack);
+    border-radius: .5rem;
+    animation-name: notification-in;
+    animation-fill-mode: forwards;
+    animation-duration: 132ms;
+    max-height: calc(100% - 4rem);
+    max-width: min(70rem, calc(100% - 4rem));
+    display: flex;
+    flex-direction: column;
+}
+
+.notification__content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.notification__content:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+
+/* compensate for border margin of buttons */
+
+.notification .notification__buttons {
+    margin-left: -.4em;
+}
+
+@keyframes notification-in {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

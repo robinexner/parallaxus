@@ -1,0 +1,231 @@
+/*
+ * This file is part of the parallaxus.js project.
+ * Copyright (c) 2025 Robin Exner (https://robinexner.de)
+ * GitHub: https://github.com/robinexner/parallaxus
+ * This software is licensed under the MIT License.
+ * See the LICENSE file for more information.
+ */
+
+@import url('../fundo_/base.css');
+html {}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select,
+label {
+    display: block;
+    width: 35em;
+    max-width: 100%;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    margin-top: .2em;
+}
+
+textarea {
+    height: 13em;
+}
+
+label {
+    margin-bottom: 1em;
+}
+
+#noscript-notification {}
+
+@import url(assets/fonts/Mrs_Sheppards/MrsSheppards-Regular.ttf);
+@font-face {
+    font-family: "Mrs Sheppards";
+    src: url("fonts/Mrs_Sheppards/MrsSheppards-Regular.ttf");
+}
+
+html {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    background-color: #1a1c22;
+    color: var(--white);
+}
+
+h1,
+h2 {
+    font-family: "Mrs Sheppards", serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 10rem;
+    text-shadow: .03em .03em var(--red500);
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+header h2 {
+    text-shadow: .05em .05em var(--red500);
+}
+
+header,
+section {
+    position: relative;
+    width: max-content;
+    max-width: 70rem;
+    left: 10rem;
+    z-index: 60;
+}
+
+header {
+    margin-top: 10rem;
+}
+
+header p {}
+
+nav {
+    padding: 1em;
+    padding-left: 10rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: .2em;
+}
+
+nav a:not(:first-of-type) {
+    margin-left: .3em;
+}
+
+nav a:hover {
+    color: var(--red500);
+    background-color: var(--darkBlack);
+}
+
+nav a:active {
+    color: var(--red300);
+    background-color: var(--darkerBlack);
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 7rem;
+}
+
+footer {
+    background-color: var(--darkBlack);
+    padding: 1rem;
+    padding-left: 10rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+section {
+    background-color: var(--white);
+    color: var(--black);
+    margin-top: 3rem;
+    border-radius: .75em;
+    overflow: hidden;
+    padding: 2rem;
+    box-shadow: .5em .5em var(--red500), .75em .75em var(--black), 0em 0em 1em -.5em #1a1c22;
+    border: .3em solid var(--black);
+}
+
+pre {
+    background-color: var(--darkWhite);
+    padding: 1em;
+    border-radius: .3em;
+    overflow: auto;
+    font-size: .8rem;
+}
+
+@media only screen and (max-width: 80rem) {
+    header,
+    section {
+        max-width: calc(100% - 6rem);
+        left: 3rem;
+    }
+    nav,
+    footer {
+        padding-left: 3rem;
+    }
+}
+
+@media only screen and (max-width: 60rem) {
+    header h1 {
+        font-size: 7rem;
+    }
+    header h2 {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 40rem) {
+    header h1 {
+        font-size: 5rem;
+    }
+    header h2 {
+        font-size: 2rem;
+    }
+    header,
+    section {
+        max-width: calc(100% - 2.5rem);
+        left: 1.5rem;
+    }
+    nav,
+    footer {
+        padding-left: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 30rem) {
+    header h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+#parallaxus-rocket {
+    top: 60rem;
+    left: -10rem;
+    height: 10rem;
+}
+
+#parallaxus-whale {
+    top: 120rem;
+    right: calc(5% + 4rem);
+    width: 20rem;
+}
+
+#parallaxus-pot {
+    top: 125rem;
+    right: 5%;
+    width: 2rem;
+}
+
+.parallaxus-object {
+    position: absolute;
+    z-index: 50;
+}

@@ -1,0 +1,82 @@
+/*
+ * This file is part of the fundo_ project.
+ * Copyright (c) 2025 Robin Exner (https://robinexner.de)
+ * GitHub: https://github.com/robinexner/fundo_
+ * This software is licensed under the MIT License.
+ * See the LICENSE file for more information.
+ */
+
+
+/* Burgermenu */
+
+.burgermenu {
+    z-index: 500;
+    position: fixed;
+}
+
+.burgermenu .burgermenu__toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2.5rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: .5em;
+    background: var(--white);
+    z-index: 5000;
+    overflow: hidden;
+    box-shadow: 0 0 1em -0.75em var(--black);
+    cursor: pointer;
+}
+
+.burgermenu .burgermenu__toggle::before,
+.burgermenu .burgermenu__toggle::after {
+    position: absolute;
+    content: "☰";
+    width: 3rem;
+    height: 3rem;
+    color: var(--black);
+    transition: left 74ms ease-in-out;
+    align-content: center;
+    text-align: center;
+    font-size: 1.7em;
+    left: 0;
+    display: inline-block;
+}
+
+.burgermenu .burgermenu__toggle::after {
+    content: "✖";
+    left: 3rem;
+}
+
+.burgermenu .burgermenu__toggle:hover {
+    background: var(--darkWhite);
+}
+
+.burgermenu .burgermenu__checkbox {
+    visibility: hidden;
+}
+
+.burgermenu .burgermenu__content {
+    background: var(--black);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    padding: 2rem;
+    padding-top: 6rem;
+    transform: translateX(100%);
+    transition: transform 132ms ease-in-out;
+    overflow-y: auto;
+}
+
+.burgermenu .burgermenu__checkbox:checked+.burgermenu__content {
+    transform: translateX(0%);
+}
+
+.burgermenu .burgermenu__checkbox:checked+.burgermenu__content+.burgermenu__toggle::before {
+    left: -3rem;
+}
+
+.burgermenu .burgermenu__checkbox:checked+.burgermenu__content+.burgermenu__toggle::after {
+    left: 0;
+}
